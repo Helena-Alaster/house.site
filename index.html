@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Документы дома</title>
+    
+    <!-- Подключение шрифта PT Sans для официального стиля -->
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- ГЛАВНАЯ СТРОКА: подключение ваших стилей -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Здесь начинается видимая часть вашей страницы. info-block -- nested detail рабочий блок -->
+<div class="container">
+    <details class="info-block">
+        <summary>
+            Управляющая компания многоквартирного дома №5
+            <span class="chevron">▾</span>
+        </summary>
+        
+        <div class="description">
+            Правила содержания придомовой территории, график дежурств дворников и контакты ответственной службы ЖКХ.
+        </div>
+
+        <div class="pdf-link">
+            <a href="/docs/blagoustroistvo_reglament.pdf" target="_blank">  ПОСТАНОВЛЕНИЕ от 15 мая 2013 г. N 416
+ (.PDF)</a>
+        </div>
+
+        <div class="nested-blocks">
+            <details class="nested-details">
+                <summary>Заявления</summary>
+                <ul style="margin: 10px 0 0 25px; padding: 0; color: #555;">
+                    <li><a href="/docs/zayavlenie_uborka.pdf" target="_blank">Заявление по уборке территории</a></li>
+                    <li><a href="/docs/zayavlenie_musor.pdf" target="_blank">Заявка на вывоз крупногабаритного мусора</a></li>
+                </ul>
+            </details>
+            
+            <details class="nested-details">
+                <summary>Нормативные акты</summary>
+                <ul style="margin: 10px 0 0 25px; padding: 0; color: #555;">
+                    <li><a href="/docs/pravila_blagoustroistva.pdf" target="_blank">Постановление администрации города</a></li>
+                </ul>
+            </details>
+        </div>
+    </details>
+<!-- второй рабочий блок -->
+    <details class="info-block">
+        <summary>
+            Благоустройство территории дома
+            <span class="chevron">▾</span>
+        </summary>
+        
+        <div class="description">
+            Правила содержания придомовой территории, график дежурств дворников и контакты ответственной службы ЖКХ.
+        </div>
+
+        <div class="pdf-link">
+            <a href="/docs/blagoustroistvo_reglament.pdf" target="_blank">Регламент благоустройства (.PDF)</a>
+        </div>
+
+        <div class="nested-blocks">
+            <details class="nested-details">
+                <summary>Заявления</summary>
+                <ul style="margin: 10px 0 0 25px; padding: 0; color: #555;">
+                    <li><a href="/docs/zayavlenie_uborka.pdf" target="_blank">Заявление по уборке территории</a></li>
+                    <li><a href="/docs/zayavlenie_musor.pdf" target="_blank">Заявка на вывоз крупногабаритного мусора</a></li>
+                </ul>
+            </details>
+            
+            <details class="nested-details">
+                <summary>Нормативные акты</summary>
+                <ul style="margin: 10px 0 0 25px; padding: 0; color: #555;">
+                    <li><a href="/docs/pravila_blagoustroistva.pdf" target="_blank">Постановление администрации города</a></li>
+                </ul>
+            </details>
+        </div>
+    </details>
+
+    <details class="info-block" style="margin-top: 15px;">
+        <summary>
+            Инженерные системы и лифты
+            <span class="chevron">▾</span>
+        </summary>
+        
+        <div class="description">
+            Графики технического обслуживания оборудования, сроки поверки счетчиков и плановые отключения ресурсов.
+        </div>
+
+        <div class="pdf-link">
+            <a href="/docs/inzhenernye_grafik.pdf" target="_blank">График ТО инженерных сетей (.PDF)</a>
+        </div>
+    </details>
+</div>
+
+<!-- Видимая часть заканчивается здесь -->
+</body>
+</html>
