@@ -109,3 +109,96 @@ body {
     font-size: 16px;
     color: #0b3d66;
 }
+
+.doc-subtitle {
+    font-size: 18px; /* Чуть больше основного текста */
+    line-height: 1.4;
+    margin-bottom: 0.5em; /* Отступ до следующего параграфа */
+    
+    /* Варианты выделения: */
+    color: #34495e; /* Темно-серый цвет вместо черного (#000) — легче для глаз */
+    font-weight: 600; /* Полужирный, но не экстремальный */
+    
+    /* Можно добавить разделитель снизу для акцента: */
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 6px;
+}
+
+/* === 1. ОСНОВНОЙ КОНТЕЙНЕР ТЕКСТА (Ограничение ширины) === */
+/* Чтобы строки не были слишком длинными на больших экранах */
+.text-block-container {
+    max-width: 720px; /* Идеальная ширина для чтения (~80 символов) */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === 2. САМ БЛОК С ФОНОМ И ВНУТРЕННИМИ ОТБЫВАМИ (Padding) === */
+.block-content {
+    padding: 24px; /* Воздух вокруг текста, чтобы он не прилипал к краям */
+    background-color: #fafbfc; /* Мягкий светло-серый фон вместо белого (#fff) */
+    border-radius: 10px; /* Скругление углов для современного вида */
+    
+    /* Защита от переполнения длинных слов (например, названий файлов): */
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* === 3. ОСНОВНОЙ ТЕКСТ (Абзацы) — Margin только снизу! === */
+.block-content p {
+    font-size: 16px;
+    line-height: 1.75; /* Высокий интервал для легкого чтения с экрана */
+    color: #333333; /* Не чисто черный, мягче для глаз */
+    
+    margin-top: 0; /* Убираем лишние отступы сверху */
+    margin-bottom: 1.2em; /* Отступ до следующего абзаца или заголовка */
+}
+
+/* === 4. ВНУТРЕННИЕ ЗАГОЛОВКИ (Подзаголовки внутри блока) === */
+.block-content h4 {
+    font-size: 1.125rem; /* Примерно 18px */
+    line-height: 1.4;
+    color: #2c3e50; /* Темнее основного текста для иерархии */
+    font-weight: 600;
+    
+    margin-top: 1.5em; /* Отделяем от предыдущего контента */
+    margin-bottom: 0.75em; /* Близко к своему тексту */
+    
+    /* Опционально: тонкая линия-подчеркивание для акцента */
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 6px;
+}
+
+/* === 5. СПИСКИ ДОКУМЕНТОВ (UL / OL) === */
+.block-content ul,
+.block-content ol {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    
+    margin-top: 0; /* Список должен "прилипать" к своему подзаголовку */
+    margin-bottom: 1.5em;
+    padding-left: 25px; /* Стандартный отступ для маркеров */
+}
+
+/* Если пункты списка сами являются блоками с фоном (как карточки документов) */
+.block-content li {
+    margin-bottom: 1em;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* === 6. АДАПТИВНОСТЬ (Для мобильных телефонов) === */
+@media (max-width: 640px) {
+    .block-content {
+        padding: 18px 15px; /* Чуть меньше воздуха по бокам */
+        border-radius: 8px;
+    }
+    
+    .block-content p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 1em;
+    }
+}
