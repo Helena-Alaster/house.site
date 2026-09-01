@@ -24,8 +24,8 @@ body { background-color: linear-gradient(to bottom, #d4f0f5 0%, #ffffff 100%); /
 
 /* Делаем хедер "контекстом" */ header { position: relative; /* Ключевое свойство! */ 
 }
- /* Стиль нашего выносного блока */ .overlay-block { 
-    /* Выносим блок из потока документа */ position: absolute; 
+.info-block0 { 
+    position: absolute; 
     top: 20%; 
      /* Центрирование по вертикали внутри хедера */ transform: translateY(-50%);
       /* Корректировка смещения */  top: 200px; right: 430px;
@@ -40,7 +40,8 @@ body { background-color: linear-gradient(to bottom, #d4f0f5 0%, #ffffff 100%); /
     overflow: hidden;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
     margin-bottom: 20px;
-    order: 2;
+    overflow-y: auto;
+    .scrollable { height: 300px; /* Ограничиваем видимую высоту */ overflow-y: auto; /* Вертикальная прокрутка */ }
     }
     
 
@@ -91,8 +92,22 @@ body { background-color: linear-gradient(to bottom, #d4f0f5 0%, #ffffff 100%); /
     border-left: 4px solid #00aeef;
     margin-bottom: 20px;
     order: 1;
+    width: 270px;
+    margin-left: 425px;
+    overflow-y: auto;
 }
 
+.info-block2 {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    background-color: #fff;
+    border-left: 4px solid #00aeef;
+    margin-bottom: 20px;
+    order: 1;
+    display: none;
+}
 
 .info-block summary {
     list-style: none;
@@ -111,7 +126,22 @@ body { background-color: linear-gradient(to bottom, #d4f0f5 0%, #ffffff 100%); /
 .info-block0 summary {
     list-style: none;
     cursor: pointer;
-    padding: 18px 20px;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: #0b3d66;
+    user-select: none;
+    border-bottom: 1px solid #edf3f6;
+    width: 250px;
+}
+
+.info-block2 summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 3px 3px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -121,7 +151,6 @@ body { background-color: linear-gradient(to bottom, #d4f0f5 0%, #ffffff 100%); /
     user-select: none;
     border-bottom: 1px solid #edf3f6;
 }
-
 
 /* Прячем стандартный треугольник браузера */
 .info-block summary::-webkit-details-marker { display: none; }
@@ -275,9 +304,18 @@ body { background-color: linear-gradient(to bottom, #d4f0f5 0%, #ffffff 100%); /
      .info-block { 
         position: static;  
         margin-top: 20px;  } }
-    .info-block0 {
-        display: none;
-    }
+
+@media (max-width: 768px) { 
+     .info-block0 { 
+        position: static;  
+        margin-top: 20px;  } }
+
+
+@media (min-width: 768px) { 
+     .info-block0 { 
+         
+    margin-right: 15px;  } }
+
 
 /* Базовые стили для плавной анимации */
 .highlightable {
