@@ -18,12 +18,56 @@ body {
     padding: 30px 20px;
     color: #2c3e50;
 }
+header { position: relative; /* Для абсолютного позиционирования */ }
+
+body { background-color: linear-gradient(to bottom, #d4f0f5 0%, #ffffff 100%); /* Или любой другой оттенок */ }
+
+/* Делаем хедер "контекстом" */ header { position: relative; /* Ключевое свойство! */ 
+}
+ /* Стиль нашего выносного блока */ .overlay-block { 
+    /* Выносим блок из потока документа */ position: absolute; 
+    top: 20%; 
+     /* Центрирование по вертикали внутри хедера */ transform: translateY(-50%);
+      /* Корректировка смещения */  top: 200px; right: 430px;
+      
+       /* Прижимает блок к правому краю хедера */ /* Или используйте left: 0; для левого края */ padding: 15px; padding-bottom: 70px;
+       background-color: rgba(255, 255, 255, 0); 
+       border-radius: 8px; 
+       box-shadow: 0 4px 6px rgba(0,0,0,0.0);
+        z-index: 10; /* Чтобы он был над всем контентом */ 
+         max-width: 250px; max-height: 130px;
+        border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    margin-bottom: 20px;
+    order: 2;
+    }
+    
+
+.scrollable { height: 300px; /* Ограничиваем видимую высоту */ overflow-y: auto; /* Вертикальная прокрутка */ }
 
 /* Контейнер отступает от краев, но не ломает высоту фона */
 .container {
     max-width: 700px;
     margin: 0 auto;
+    
 }
+
+
+
+
+.vertical-panel { width: 250px; /* Фиксированная ширина боковой панели */ 
+    display: flex; 
+    flex-direction: column; /* Раскладывает блоки вертикально */ 
+    gap: 10px; 
+    background-color: #ebf4ff; 
+    padding: 10px; 
+    border-radius: 8px; } /* Отдельные информационные блоки внутри боковой панели */ 
+    .info-block { padding: 10px; border-bottom: 1px solid #dfe6ee; } 
+    .overlay-block { padding: 10px; border-bottom: 1px solid #dfe6ee; }/* Адаптация под мобильные устройства */ 
+    @media (max-width: 768px) 
+    { .main-container { flex-direction: column; /* Меняем порядок: сначала боковая панель */ } 
+    .vertical-panel { width: auto; /* Растягиваем её во всю ширину экрана */ } }
 
 /* --- Стили аккордеона --- */
 .info-block {
@@ -34,7 +78,21 @@ body {
     background-color: #fff;
     border-left: 4px solid #00aeef;
     margin-bottom: 20px;
+    order: 1;
+    
 }
+
+.info-block0 {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    background-color: #fff;
+    border-left: 4px solid #00aeef;
+    margin-bottom: 20px;
+    order: 1;
+}
+
 
 .info-block summary {
     list-style: none;
@@ -49,6 +107,21 @@ body {
     user-select: none;
     border-bottom: 1px solid #edf3f6;
 }
+
+.info-block0 summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: #0b3d66;
+    user-select: none;
+    border-bottom: 1px solid #edf3f6;
+}
+
 
 /* Прячем стандартный треугольник браузера */
 .info-block summary::-webkit-details-marker { display: none; }
@@ -192,19 +265,19 @@ body {
 }
 
 /* === 6. АДАПТИВНОСТЬ (Для мобильных телефонов) === */
-@media (max-width: 640px) {
-    .block-content {
-        padding: 18px 15px; /* Чуть меньше воздуха по бокам */
-        border-radius: 8px;
-    }
-    
-    .block-content p {
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 1em;
-    }
-}
+@media (max-width: 768px) { 
+     .info-block { 
+        position: static;  
+        margin-top: 20px;  } }
 
+
+@media (min-width: 768px) { 
+     .info-block { 
+        position: static;  
+        margin-top: 20px;  } }
+    .info-block0 {
+        display: none;
+    }
 
 /* Базовые стили для плавной анимации */
 .highlightable {
@@ -229,3 +302,4 @@ body {
 
 img { 
     max-width: 100%; /* Картинка не может стать шире своего родителя */ height: auto; /* Сохраняет пропорции при изменении ширины */ display: block; /* Убирает небольшое пустое пространство снизу картинки */ }
+
