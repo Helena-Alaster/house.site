@@ -338,6 +338,18 @@ body { background-color: linear-gradient(to bottom, #d4f0f5 0%, #ffffff 100%); /
     margin-bottom: 15px;
 }
 
+@media (max-width: 768px) { 
+    .info-block0 { /* Убираем абсолютное позиционирование */ 
+        position: static ;  
+        text-align: center; /* Центрируем содержимое внутри него */ 
+        margin-top: 3rem; 
+        margin-bottom: 6rem; 
+        margin-left: 0; 
+        width: 250px; 
+        top: 30px; 
+        transform: translateY(50%) } }
+
+
 img { 
     max-width: 100%; /* Картинка не может стать шире своего родителя */ height: auto; /* Сохраняет пропорции при изменении ширины */ display: block; /* Убирает небольшое пустое пространство снизу картинки */ }
 
