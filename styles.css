@@ -45,7 +45,7 @@ body { background-color: linear-gradient(to bottom, #d4f0f5 0%, #ffffff 100%); /
     }
     
 
-.scrollable { height: 300px; /* Ограничиваем видимую высоту */ overflow-y: auto; /* Вертикальная прокрутка */ }
+.scrollable { height: 200px; /* Ограничиваем видимую высоту */ overflow-y: auto; /* Вертикальная прокрутка */ }
 
 /* Контейнер отступает от краев, но не ломает высоту фона */
 .container {
