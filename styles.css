@@ -106,6 +106,7 @@ body { background-color: linear-gradient(to bottom, #d4f0f5 0%, #ffffff 100%); /
     border-left: 4px solid #ef0000;
     margin-bottom: 20px;
     order: 1;
+    margin-left: -10px;
     
 }
 
