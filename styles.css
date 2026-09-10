@@ -65,7 +65,7 @@ body { background-color: linear-gradient(to bottom, #d4f0f5 0%, #ffffff 100%); /
     padding: 10px; 
     border-radius: 8px; } /* Отдельные информационные блоки внутри боковой панели */ 
     .info-block { padding: 10px; border-bottom: 1px solid #dfe6ee; } 
-    .overlay-block { padding: 10px; border-bottom: 1px solid #dfe6ee; }/* Адаптация под мобильные устройства */ 
+    .overlay-block { padding: 10px 0 0 10px; border-bottom: 1px solid #dfe6ee; }/* Адаптация под мобильные устройства */ 
     @media (max-width: 768px) 
     { .main-container { flex-direction: column; /* Меняем порядок: сначала боковая панель */ } 
     .vertical-panel { width: auto; /* Растягиваем её во всю ширину экрана */ } }
