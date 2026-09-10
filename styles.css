@@ -181,11 +181,21 @@ body { background-color: linear-gradient(to bottom, #d4f0f5 0%, #ffffff 100%); /
     border-bottom: 1px dashed #e1e8ed;
 }
 
+.description1 {
+    line-height: 1.6;
+    font-size: 15px;
+    color: #34495e;
+    border-bottom: 1px dashed #e1e8ed;
+    margin-left: 100px;
+    margin-top: -40px;
+}
+
 .pdf-link a, .nested-blocks a {
     text-decoration: none;
     color: #0077b5;
     font-size: 14px;
     display: block;
+    padding: 12px 20px;
     position: relative;
     transition: background-color 0.2s ease, padding-left 0.2s ease;
 }
